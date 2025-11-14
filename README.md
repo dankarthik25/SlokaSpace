@@ -1,5 +1,5 @@
 # Website URL:
-update url:
+Visit Url: https://dankarthik25.github.io/SlokaSpace/index.html
 
 # How to update songs 
 ```sh
