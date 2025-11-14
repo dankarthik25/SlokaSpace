@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="../static/logo.png">  
+  <!-- <link rel="stylesheet" href="static/css2.css"> -->
+  <link rel="stylesheet" type="text/css" href="../static/mytheme.css">
+
+
+
+</head>
+
+<body>
+  <main role="main" class="">
+
+
+<div class="content">
+    <div style=" color: #1564a8; background-color: #f5f5f5;padding: 7px; margin-top: 15px;">
+        <a class="song-path" href="../index.html"> Home</a> / Songs / 
+        <a class="song-path" href=""> {{info[0]['song_name']}}</a>
+    </div>
+
+    <h1 class="sloka-title" style="margin-top: 10px;"> {{info[0]['song_name']}} </h1>
+
+    <h2 style="text-align: left; margin-bottom: 10px;"> Slokas Links </h2>
+    <p style="margin-bottom: 10px;"> For Synonyms (sanskrit word to word meaning) Click Below link </p>
+    Sloka No: &nbsp;&nbsp;&nbsp;
+        {% for song_part in song_meta%}
+            <a class="sloka-synonyms-key" href="{{song_part['song_idx']}}/{{song_part['slokas_no']}}">
+             {{song_part['song_name']}} {{song_part['slokas_no']}} </a> &nbsp;
+        {% endfor %}
+    </p>            
+
+    {% for song_part in song_meta%}
+    <div style="margin-top:20px ; padding-top: 50px; border-top: #f5f5f5 solid 5px;">
+        <h1 class="sloka-title">
+            <a class="sloka-synonyms-key"
+                href="{{info[0]['song_idx']}}/{{song_part['slokas_no']}}"> Text
+                {{song_part['song_name']}} | {{song_part['slokas_no']}} | </a>
+        </h1>
+        <p class="sloka-verser-eng">
+            <i>
+                {% for eng_line in song_part['sloka_eng'] %}
+                        {{eng_line}}<br>
+                {% endfor %}
+            </i>
+        </p>
+    </div>
+
+    {% if song_part['synonyms'] is not none %}
+    <div style="text-align: center;">
+        <h1 class="sloka-header">Synonyms</h1>
+        <p class="synonym-text">
+                {% for line in song_part['synonyms'] %}
+                <!-- {{line}} -->
+                <div style="border: 1px solid  #fdf1dc;padding: 2px;">
+                    {% for synonym_dic in line %}
+                    <!-- {{synonym_dic}} -->
+                        {% for key, value in synonym_dic.items() %}
+                            <a class="sloka-synonyms-key" href=''> {{key}}</a>:{{value}} ;
+                        {% endfor %}
+                    {% endfor %}<br>
+                </div>    
+                {% endfor %}
+        </p>
+    </div> 
+    {% endif %}
+
+    {% if song_part['translation'] is not none %}
+    <div style="text-align: center; padding-bottom: 20px; margin-bottom:20px ;">
+        <h1 class="sloka-header">Translation</h1>
+        <p class="translation-text">
+        {% for trans_line in song_part['translation'] %}
+                {{trans_line}} <br>
+        {% endfor %}
+        </p>
+    </div>
+    {% endif %}
+    <!-- {{song_part}} -->
+    {% endfor %}
+
+    <div>
+        <h1> Info</h1>
+        <b>Song Index</b> : {{info[0]['song_idx']}} <br>
+        <b>Song Name</b> : {{info[0]['song_name']}} <br>
+        <b>Song Short form</b> : {{info[0]['song_short_name']}} <br>
+        <b>Total No.of Sloka(Verses)</b> : {{info[0]['total_slokas']}} <br>
+        <b>Group </b>: {{info[0]['groups']}} <br>
+        <b>Prayer to Lord </b>: {{info[0]['devotion_god']}} <br>
+        <b>Author </b>:<a href=""> {{info[0]['author']}}</a> <br>
+        <b>Describtion</b> : {{info[0]['describtion']}} <br>
+        <b>Other Links</b> : {{info[0]['other_links']}} <br>
+    </div>
+
+
+
+
+  </main>
+    <script src ="static/myScript.js" ></script>
+
+</body>
+</html>    

@@ -1,0 +1,257 @@
+:root {
+  --highlite-background: #f9f8f7;
+  --highlite-hover:  #dbd9d7;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#toggleNav{
+color: #428bca;
+padding: 1px;
+text-decoration:none;
+}
+
+#prevSloka{
+color: #428bca;
+padding: 1px;
+text-decoration:none;
+float:right;
+}
+
+#nextSloka{
+color: #428bca;
+padding: 1px;
+text-decoration:none;
+float:right;
+}
+
+
+header {
+  background-color: var(--highlite-background); /*#f7d393;*/
+  background-color: rgb(255,255,255); 
+  margin: 5px 0px 5px 0px;
+  /* black; */
+  color: black;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,.1);
+}
+
+body {
+  background-color: white;
+  /* color: black; */
+}
+
+nav {
+  /* padding: 2em 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-right {
+  margin-top: 3px;
+  /* padding: 0px 5px; */
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+}
+
+
+ul {
+  display: flex;
+  list-style-type: none;
+  /* padding: 5px 5px 0px 5px; */
+  /* margin: 5px; */
+}
+
+/* li {
+
+} */
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: white; */
+  color: #000;
+  margin: 0px 5px;
+  /* font-weight: bolder; */
+}
+
+/* a:hover, */
+li:hover, .nav-link:hover {
+  /* color: darkgray;  */
+  /* color: white; */
+  color:  	#ff5722;;
+  font-weight: 600;
+   /* #6b1b04; */
+  /* background-color: var(--highlite-hover); #6b1b04; */
+
+  /* darkgray; */
+}
+
+/* .content { */
+  /* padding: 15px; */
+/* } */
+
+.main-search-bar{
+  display: flex;
+  flex-direction: row; /*column;*/
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.song-path-container {
+  color: #1564a8;
+  background-color: #f5f5f5;
+  padding: 1px;
+}
+
+.song-path {
+  background-color: #f5f5f5;
+  color: #428bca;
+  padding: 1px;
+  text-decoration: none;
+  /* background-color: transparent; */
+}
+
+.song-path:hover {
+  text-decoration: underline;
+  color: #1564a8;
+  background-color: #f5f5f5;
+
+}
+
+.sloka-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: "Noto Serif vedabaseio", "Noto Serif", serif;
+  padding: 10px 0px
+}
+
+.sloka-verser-eng {
+  text-align: center;
+  font-family: "Noto Sans Devanagari", "Sanskrit 2003";
+  /* font-family: "cursive"; */
+  /* "Lohit Devanagari"; */
+  font-size: 1.5rem;
+  /* font-weight: 700; */
+  padding: 10px;
+}
+
+.sloka-header {
+  text-align: center;
+  font-family: "Noto Serif vedabaseio", "Noto Serif", serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(0, 128, 0);
+  padding: 10px 0px
+}
+
+.synonym-text {
+  font-size: 1.5rem;
+}
+
+.sloka-synonyms-key {
+  color: #BC2E07;
+  text-decoration: none;
+  background-color: transparent;
+
+}
+
+.sloka-synonyms-key:hover {
+  color: #6b1b04;
+  text-decoration: underline
+}
+
+.translation-text {
+  font-size: 1.25rem;
+  font-family: system-ui;
+}
+
+.song-menu-header {
+  padding: 2px;
+  font-size: 1.25rem;
+  color: #6b1b04;
+  background-color:  var(--highlite-background); /*#f3e0c0;*/
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+}
+.song-menu-header-row{
+  display: flex
+}
+
+.song-menu-header-anchor {
+  text-decoration: none;
+  color: #6b1b04;
+  flex:1  ;
+  /* display: flex; */
+  flex-direction: row;
+  /* align-items: center; */
+  text-align: left;
+
+  /* background-color: var(--highlite-hover);    */
+  /* background-color: #f3e0c0; */
+}
+
+.song-menu-header-anchor-right {
+  text-decoration: none;
+  color: #6b1b04;
+  /* display: flex; */
+  flex:1;
+  /* flex-direction: row-reverse; */
+  /* align-items: center; */
+  text-align: right;
+  /* background-color: var(--highlite-hover);    */
+  /* background-color: #f3e0c0; */
+}
+
+.song-menu-header-anchor:hover,
+.song-menu-header:hover {
+  background-color: var(--highlite-hover); /*#6b1b04;*/
+  /* color: #f4d7a2; */
+}
+
+.song-menu-header-anchor:hover {
+  background-color: var(--highlite-background); /*#6b1b04;*/
+  /* color: #f4d7a2; */
+  text-decoration: underline;
+}
+
+
+.main-search {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f6f6f6;
+}
+
+.main-search-input {
+  font-size: 16px;
+  color: #333333;
+  margin-left: 14px;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 500px;
+}
+
+.main-search-input:placeholder,
+.main-search-icon {
+  color: rgba(0, 0, 0, 0.50);
+}

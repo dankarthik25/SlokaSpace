@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div  >
+    <h1 style = 'text-align: center; font-size: 2em; font-weight: 700; font-family: "Noto Serif vedabaseio", "Noto Serif", serif; '> {{posts.sloka_no}}</h1>
+    </div>
+
+    <div style = 'text-align: center; font-family: "Noto Sans Devanagari", "Sanskrit 2003", "Lohit Devanagari", "Arial", serif; font-size: 1.5em; font-weight: 700;'>
+    {% for dev_line in posts['devanagari_text'] %}
+        {{dev_line}}<br>
+    {% endfor %}
+    </div>
+    <div style = 'text-align: center; font-family: "Noto Serif vedabaseio", "Noto Serif", serif; font-size: 1.2em; font-weight: 500; '>
+    <i>
+    {% for iskcon_line in posts['iskcon_font'] %}
+         {{iskcon_line}} <br>
+    {% endfor %}    
+    </i>
+    </div>
+
+    <div  style=' font-family: "Noto Serif vedabaseio", "Noto Serif", serif; font-size: 1.2em; font-weight: 300;'>
+        <h2 style = 'text-align: center; font-family: "Noto Serif vedabaseio", "Noto Serif", serif; font-size: 1.5em; font-weight: 700;'>Synonyms</h2>
+
+        {% for key, value in posts['synonyms'].items() %}
+            <a href = ''  > {{key}} </a>: {{value}} ; 
+        {% endfor %}    
+
+    </div>
+
+
+    <div  style=' font-family: "Noto Serif vedabaseio", "Noto Serif", serif; font-size: 1.2em; font-weight: 300;'>
+
+        <h2 style = 'text-align: center;'> Translation</h2>     
+        <p>{{posts.translation}}</p>
+    </div>
+
+    <div  style=' font-family: "Noto Serif vedabaseio", "Noto Serif", serif; font-size: 1.2em; font-weight: 300;'>
+
+        <h2 style = 'text-align: center;'> Purport</h2>     
+        <p>{{posts.purpot}}</p> 
+    </div>
+
+{% endblock content %}
